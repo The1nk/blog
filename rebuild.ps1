@@ -1,0 +1,1 @@
+docker build . -t the1nk/blog
