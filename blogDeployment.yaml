@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: blog
-        image: canister.io:5000/the1nk/blog:5
+        image: canister.io:5000/the1nk/blog:9
         ports:
-          - containerPort: 80
-            containerPort: 443
+          - containerPort: 8080
+          - containerPort: 8081
       imagePullSecrets:
       - name: regcred
