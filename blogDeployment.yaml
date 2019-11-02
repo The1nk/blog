@@ -18,5 +18,15 @@ spec:
         ports:
           - containerPort: 8080
           - containerPort: 8081
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8081
+          initialDelaySeconds: 5
+          periodSeconds: 5
       imagePullSecrets:
       - name: regcred
