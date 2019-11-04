@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: blog
-        image: canister.io:5000/the1nk/blog:12
+        image: canister.io:5000/the1nk/blog:15
         ports:
           - containerPort: 8080
           - containerPort: 8081

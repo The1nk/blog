@@ -1,2 +1,2 @@
-docker build . -t cloud.canister.io:5000/the1nk/blog:12
-docker push cloud.canister.io:5000/the1nk/blog:12
+docker build . -t cloud.canister.io:5000/the1nk/blog:15
+docker push cloud.canister.io:5000/the1nk/blog:15
