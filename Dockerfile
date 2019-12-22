@@ -1,3 +1,3 @@
 FROM nginx
-COPY site /usr/share/nginx/html
+COPY site/.vuepress/dist /usr/share/nginx/html
 COPY default.conf /etc/nginx/conf.d

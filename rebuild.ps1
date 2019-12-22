@@ -1,2 +1,3 @@
-docker build . -t cloud.canister.io:5000/the1nk/blog:29
-docker push cloud.canister.io:5000/the1nk/blog:29
+vuepress build site
+docker build . -t cloud.canister.io:5000/the1nk/blog:31
+docker push cloud.canister.io:5000/the1nk/blog:31
