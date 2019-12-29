@@ -7,6 +7,7 @@
             :src="$withBase($themeConfig.about.image)"
             :alt="$themeConfig.about.fullName"
             width="160px"
+            style="border-radius: 50%;"
           />
         </div>
         <h1 class="mt-2 text-light">{{ $themeConfig.about.fullName }}</h1>

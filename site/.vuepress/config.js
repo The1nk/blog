@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   title: "AdamDavis.DEV",
   description: "The official home of the infamous developer Adam Davis",
@@ -15,6 +17,11 @@ module.exports = {
         text: "Projects",
         link: "/projects/",
         icon: "el-icon-folder"
+      },
+      {
+        text: "Tags",
+        link: "/tag/",
+        icon: "el-icon-price-tag"
       }
     ],
     sitemap: true, // enables sitemap plugin
@@ -57,6 +64,13 @@ module.exports = {
           link: "https://adamdavis.dev"
         }
       ]
+    }
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        "@assets": path.resolve(__dirname, "../assets")
+      }
     }
   }
 };
