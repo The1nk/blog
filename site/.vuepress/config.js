@@ -29,7 +29,7 @@ module.exports = {
     // disqus: "", // if you want to incorporate Disqus for comments replace this value else just get rid of it
     socialShare: true, // enables social share
     socialShareNetworks: ["facebook", "twitter"], // required for social share plugin
-    // googleAnalytics: "", // Google Analytics tracking ID
+    googleAnalytics: "UA-155157975-1", // Google Analytics tracking ID
     about: {
       fullName: "Adam Davis",
       bio: "I'm a passionate developer who enjoys new challenges",
