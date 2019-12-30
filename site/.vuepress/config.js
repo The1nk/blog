@@ -1,8 +1,8 @@
 const path = require("path");
 
 module.exports = {
-  title: "AdamDavis.DEV",
-  description: "The official home of the infamous developer Adam Davis",
+  title: "Adam Davis",
+  description: "The home of the infamous developer Adam Davis",
   theme: require.resolve("../../"),
   summaryLength: 500,
   themeConfig: {
