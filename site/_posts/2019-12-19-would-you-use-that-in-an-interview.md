@@ -59,6 +59,8 @@ Once this was done, all that was left to do was to copy the entirety of the B co
 But .. it worked:
 <div style="border-style:solid;border-width:1px;">![final solution](~@assets/2019-12-19-final-solution.png "final solution")</div>
 
+<SimpleNewsletter/>
+
 ## Epilogue
 
 Needless to say, there were some *choice words* about my approach when the challenge organizer reviewed the incoming emails. But, I was also the first to submit an answer, *and* the one who finished with the fewest SELECT statements - only 2!

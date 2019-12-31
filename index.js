@@ -63,6 +63,14 @@ module.exports = (themeConfig, ctx) => {
       {
         searchMaxSuggestions: 10
       }
+    ],
+    [
+      "vuepress-plugin-mailchimp",
+      {
+        title: "Newsletter",
+        content: "Subscribe to get the latest content. No spam, ever.",
+        endpoint: "https://dev.us4.list-manage.com/subscribe/post?u=a96fe3cb0269c8cd86803c11c&amp;id=fd313fd85a"
+      }
     ]
   ];
 
