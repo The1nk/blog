@@ -28,13 +28,13 @@ Originally, I wasn't going to attempt this puzzle at all. About an hour after I 
 ## Let's Get Started!
 
 Thankfully, the site gives you a handy diagram of the schema to help you get started:
-<div style="border-style:solid;border-width:1px;">![database schema](~@assets/2019-12-19-schema.png "database schema")</div>
+<div style="border-style:solid;border-width:1px;">![database schema](~@assets/2019-12-19/schema.png "database schema")</div>
 
 With this in-hand, I figured the only *sane* place to start would be querying the Interviews:
-<div style="border-style:solid;border-width:1px;">![interviews](~@assets/2019-12-19-interviews.png "interviews")</div>
+<div style="border-style:solid;border-width:1px;">![interviews](~@assets/2019-12-19/interviews.png "interviews")</div>
 
 Errr.. that doesn't make a whole lot of sense. I was expecting something a bit more .. relational? Not a novel hidden in database tables.. A simple sanity-check to see if this was even feasible:
-<div style="border-style:solid;border-width:1px;">![count](~@assets/2019-12-19-interviews-count.png "count of interviews")</div>
+<div style="border-style:solid;border-width:1px;">![count](~@assets/2019-12-19/interviews-count.png "count of interviews")</div>
 
 Well, no.. No it isn't.
 
@@ -43,21 +43,21 @@ Well, no.. No it isn't.
 Since the instructions didn't *explicitly* say that we have to follow the story through .. I've got a better idea!
 
 First, a quick understanding of how the solution is checked: `insert` a name into the `solution` table (which presumably has a trigger on it) and then `select` out the value again, to see if it's correct:
-<div style="border-style:solid;border-width:1px;">![checkSolution](~@assets/2019-12-19-check-solution.png "checkSolution")</div>
+<div style="border-style:solid;border-width:1px;">![checkSolution](~@assets/2019-12-19/check-solution.png "checkSolution")</div>
 
 *Can we brute-force all of the possible values?*
-<div style="border-style:solid;border-width:1px;">![name count](~@assets/2019-12-19-name-count.png "name count")</div>
+<div style="border-style:solid;border-width:1px;">![name count](~@assets/2019-12-19/name-count.png "name count")</div>
 
 10,011 options and so little time! I prefer to do as little as possible by hand, so .. off to automate the boring stuff.
 
 Using the magic of the **clipboard** I get the full list of names into Excel, use a "*header SQL*" of `drop table tblOne; create table tblOne (name text, result text);` (to drop the table from previous attempts, and create a new table to store the results as we go), a "*footer sql*" of `select * from tblOne order by result asc` (to retrieve the total results) and a per-row SQL of `insert into solution VALUES (1, '$1'); insert into tblOne select  '$1', value from solution;` (to build the list of answers). The resulting workbook looks something like this (don't mind the ~10k hidden rows):
-<div style="border-style:solid;border-width:1px;">![excel formulae](~@assets/2019-12-19-excel-formulae.png "excel formulae")</div>
+<div style="border-style:solid;border-width:1px;">![excel formulae](~@assets/2019-12-19/excel-formulae.png "excel formulae")</div>
 
 Once this was done, all that was left to do was to copy the entirety of the B column (`B1:B1013` in the screenshot above) and paste it into that neat little **Check Your Solution** box. Boy, it looked *hideous*:
-<div style="border-style:solid;border-width:1px;">![final solution query](~@assets/2019-12-19-final-solution-query.png "final solution query")</div>
+<div style="border-style:solid;border-width:1px;">![final solution query](~@assets/2019-12-19/final-solution-query.png "final solution query")</div>
 
 But .. it worked:
-<div style="border-style:solid;border-width:1px;">![final solution](~@assets/2019-12-19-final-solution.png "final solution")</div>
+<div style="border-style:solid;border-width:1px;">![final solution](~@assets/2019-12-19/final-solution.png "final solution")</div>
 
 <SimpleNewsletter/>
 
